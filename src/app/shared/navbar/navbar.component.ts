@@ -1,22 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.scss']
+  styleUrls: ['./navbar.component.scss'],
+  host: {
+    '(document:click)': 'onClickOutside($event)',
+  },
 })
 export class NavbarComponent implements OnInit {
   links = [
     { label: 'Home', path: '/home' },
-    { label: 'Informations', path: '/infos' },
-    { label: 'Accès', path: '/access' },
+    { label: 'Accès au domaine', path: '/access' },
     { label: 'Hébergement', path: '/accomodation' },
     { label: 'Cérémonie', path: '/ceremony' },
-    { label: 'Activités', path: '/activities' },
-    { label: 'Liste de mariage', path: '/gifts' },
     { label: 'Contact', path: '/contact' },
     { label: 'RSVP', path: '/rsvp' },
   ]
+
+  constructor(private _eref: ElementRef) { }
 
   ngOnInit(): void {
     const navbar = document.getElementById("navbar");
@@ -26,6 +28,16 @@ export class NavbarComponent implements OnInit {
       } else {
         navbar?.classList.remove("moving");
       }
+    }
+  }
+
+  myFunction() {
+    document.getElementById("myDropdown")?.classList.toggle("show");
+  }
+
+  onClickOutside(event: any) {
+    if (!this._eref.nativeElement.contains(event.target)) {
+      document.getElementById("myDropdown")?.classList.remove("show");
     }
   }
   

@@ -1,25 +1,31 @@
 @import "styles.scss";
 
 .homepage {
-  background-color: #f0e6f6; /* Soft pastel color */
+  background-color: white;
   text-align: center;
-  border-radius: 3rem;
+  margin-left: -6%;
+  margin-right: -6%;
+  border: 1px solid;
+  box-shadow: 10px 5px 5px $dusty-blue;
 }
 
-.header h1 {
-  font-family: 'CursiveFont', cursive;
-  color: $dusty-blue;
-  font-size: 5vw;
+.header {
+  background-color: white;
+
+  h1 {
+    font-family: 'CursiveFont', cursive;
+    color: $dusty-blue;
+    font-size: 5vw;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: 'CursiveFont', cursive;
+    color: $dusty-blue;
+    font-size: 3vw;
+  }
 }
 
-.header p {
-  font-family: 'CursiveFont', cursive;
-  color: $dusty-blue;
-  font-size: 4vw;
-}
 
-.navbar a {
-  margin: 10px;
-  text-decoration: none;
-  color: $dusty-blue;
-}
+
+

@@ -1,8 +1,22 @@
 <section id="navbar" class="navbar">
-  <img class="w-[5rem]" src="./assets/logo-petit.png" alt="logo" href="/">
+  <img class="w-[6rem]" src="./assets/logo-petit.png" alt="logo">
   <a *ngFor="let link of links" 
     [href]="link.path"
     class="link-button my-auto">
     {{link.label}}
   </a>
+</section>
+<section id="burger">
+  <div class="burgerMenu" (click)="myFunction()">
+    <div class="burgerMenuBar"></div>
+    <div class="burgerMenuBar"></div>
+    <div class="burgerMenuBar"></div>
+  </div>
+  <div id="myDropdown" class="dropdown-content">
+    <a *ngFor="let link of links" 
+      [href]="link.path"
+      class="link-button my-auto">
+      {{link.label}}
+    </a>
+  </div>
 </section>

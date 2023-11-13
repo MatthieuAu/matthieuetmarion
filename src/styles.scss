@@ -3,13 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-$dusty-blue: #8791BF;
-$pastel-blue: #AEC6CF;
+$dusty-blue: #AEC6CF;
 $rose-pastel: #f0e6f6;
+$floral-white: #FFFAF0;
+$ardoise: #708090;
 
 body{
   padding: 0;
-  padding-top: 8rem;
+  padding-top: 6rem;
+  padding-bottom: 10%;
   margin: 0;
-  background-color: $pastel-blue;
+  background-color: white;
 }
