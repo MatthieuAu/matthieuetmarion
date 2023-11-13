@@ -1,0 +1,25 @@
+@import "styles.scss";
+
+.homepage {
+  background-color: #f0e6f6; /* Soft pastel color */
+  text-align: center;
+  border-radius: 3rem;
+}
+
+.header h1 {
+  font-family: 'CursiveFont', cursive;
+  color: $dusty-blue;
+  font-size: 5vw;
+}
+
+.header p {
+  font-family: 'CursiveFont', cursive;
+  color: $dusty-blue;
+  font-size: 4vw;
+}
+
+.navbar a {
+  margin: 10px;
+  text-decoration: none;
+  color: $dusty-blue;
+}

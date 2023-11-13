@@ -1,0 +1,29 @@
+@import "styles.scss";
+
+.navbar {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &.moving {
+    background-color: $pastel-blue;
+    border-bottom: 2px solid;
+    border-color: $rose-pastel;
+  }
+}
+
+.link-button {
+  border-radius: 50px;
+  cursor: pointer;
+  padding: 0.5rem 1rem; 
+  color: $dusty-blue;
+  background-color: $rose-pastel;
+  &:hover {
+    color: $rose-pastel;
+    background-color: $dusty-blue;
+  }
+}

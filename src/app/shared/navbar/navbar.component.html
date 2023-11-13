@@ -1,0 +1,8 @@
+<section id="navbar" class="navbar">
+  <img class="w-[5rem]" src="./assets/logo-petit.png" alt="logo" href="/">
+  <a *ngFor="let link of links" 
+    [href]="link.path"
+    class="link-button my-auto">
+    {{link.label}}
+  </a>
+</section>

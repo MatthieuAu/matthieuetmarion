@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$dusty-blue: #8791BF;
+$pastel-blue: #AEC6CF;
+$rose-pastel: #f0e6f6;
+
+body{
+  padding: 0;
+  padding-top: 8rem;
+  margin: 0;
+  background-color: $pastel-blue;
+}
