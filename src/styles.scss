@@ -1,5 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @tailwind base;
+
+@layer base {
+  a {
+    @apply text-blue-600 underline;
+  }
+}
+
 @tailwind components;
 @tailwind utilities;
 
@@ -20,5 +27,4 @@ body{
   body {
     padding-top: 2.5rem;
   }
-
 }

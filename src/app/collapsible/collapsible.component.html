@@ -1,0 +1,10 @@
+<div>
+  <button class="collapsible--title" (click)="isContentVisible = !isContentVisible">
+    {{title}}
+    <span class="arrow ml-[1rem]" [ngClass]="{'down': isContentVisible, 'right': !isContentVisible}"></span>
+  </button>
+  <div class="content" *ngIf="isContentVisible">
+    {{content}}
+    <ng-content></ng-content>
+  </div>
+</div>
