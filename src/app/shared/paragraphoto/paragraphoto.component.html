@@ -1,0 +1,7 @@
+<div class="paragraph-auto--style flex justify-between gap-[2rem] items-center" [ngClass]="{'flex-row-reverse' : reverse}">
+  <div class="flex flex-col gap-[1.5rem]">
+    <p *ngFor="let line of content">{{line}}</p>
+  </div>
+  <img *ngIf="img" [src]="img" class="w-[20vw] object-contain">
+</div>
+

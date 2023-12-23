@@ -9,6 +9,8 @@ import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { HebergementComponent } from './hebergement/hebergement.component';
+import { ParagraphotoComponent } from './shared/paragraphoto/paragraphoto.component';
+import { RsvpComponent } from './rsvp/rsvp.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { HebergementComponent } from './hebergement/hebergement.component';
     FooterComponent,
     CollapsibleComponent,
     HebergementComponent,
+    ParagraphotoComponent,
+    RsvpComponent,
   ],
   imports: [
     BrowserModule,

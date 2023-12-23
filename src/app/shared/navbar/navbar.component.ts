@@ -11,10 +11,10 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   links = [
     { label: 'Home', path: '/home' },
-    { label: 'Accès au domaine', path: '/access' },
-    // { label: 'Hébergement', path: '/accomodation' }, //hidden for now
-    { label: 'Cérémonie', path: '/ceremony' },
-    { label: 'Contact', path: '/contact' },
+    // { label: 'Accès au domaine', path: '/access' },
+    { label: 'Hébergement', path: '/accomodation' },
+    // { label: 'Cérémonie', path: '/ceremony' },
+    // { label: 'Contact', path: '/contact' },
     { label: 'RSVP', path: '/rsvp' },
   ]
 

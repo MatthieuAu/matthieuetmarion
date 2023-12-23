@@ -5,7 +5,7 @@
   text-align: center;
   margin-left: -6%;
   margin-right: -6%;
-  border: 1px solid;
+  border-bottom: 1px solid;
   box-shadow: 10px 5px 5px $dusty-blue;
 }
 
@@ -13,19 +13,17 @@
   background-color: white;
 
   h1 {
-    font-family: 'CursiveFont', cursive;
+    font-family: 'BelovedJourney', cursive;
     color: $dusty-blue;
-    font-size: 5vw;
+    font-size: 7vw;
     margin-bottom: 1rem;
   }
 
   p {
-    font-family: 'CursiveFont', cursive;
+    font-family: 'BelovedJourney', cursive;
     color: $dusty-blue;
     font-size: 3vw;
   }
 }
-
-
 
 

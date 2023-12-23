@@ -15,15 +15,27 @@ $rose-pastel: #f0e6f6;
 $floral-white: #FFFAF0;
 $ardoise: #708090;
 
-body{
-  padding: 0;
-  padding-top: 6rem;
-  padding-bottom: 10%;
-  margin: 0;
-  background-color: white;
+@font-face {
+  font-family: BelovedJourney;
+  src: url(assets/fonts/BelovedJourney-WydBA.ttf) format('truetype');
 }
 
-@media only screen and (max-width: 1000px) {
+body{
+
+  h2 {
+    font-family: 'CursiveFont', cursive;
+    font-size: 2rem !important;
+    color: black;
+  } 
+
+  app-root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 400px) {
   body {
     padding-top: 2.5rem;
   }
