@@ -1,9 +1,10 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './homepage/homepage.component';
 import { ContactComponent } from './contact/contact.component';
 import { HebergementComponent } from './hebergement/hebergement.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
+import { AccesDomaine } from './accesDomaine/accesDomaine.component';
 
 const routes: Routes = [
   { path: '',
@@ -25,7 +26,10 @@ const routes: Routes = [
   {
     path: 'accomodation',
     component: HebergementComponent,
-  
+  },
+  {
+    path: 'access',
+    component: AccesDomaine,
   },
   {
     path: 'rsvp',
