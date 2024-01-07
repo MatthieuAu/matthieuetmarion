@@ -1,5 +1,14 @@
 export const accomodation = [
   {
+    title: "Hôtel Ibis Melun",
+    content: `Adresse : 81 Av. de Meaux, 77000 Melun\n
+              Tel : 01.60.68.42.45\n
+    `,
+    siteWeb: "https://all.accor.com/ssr/app/accor/rates/0620/index.fr.shtml",
+    location: "Hôtel+Ibis+Melun",
+    img: "https://images.trvl-media.com/lodging/1000000/20000/14400/14335/702c35cc_z.jpg"
+  },
+  {
     title: "Hôtel Ibis Style Melun",
     content: `Adresse : 6 rue du Pierre, 77950 Rubelles\n
               Tel : 01.64.52.41.41\n
