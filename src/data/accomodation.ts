@@ -18,14 +18,6 @@ export const accomodation = [
     img: "https://www.ahstatic.com/photos/7972_rodbc_00_p_346x260.jpg"
   },
   {
-    title: "M. et Mme Valery",
-    content: `Adresse : 6 rue de l'Eglise, 77390, Crisenoy\n
-              Tel : 01.64.38.83.20\n
-              Capacité: 5 chambres, 10 couchages\n
-    `,
-    location: "6+rue+de+l'Eglise,+77390,+Crisenoy"
-  },
-  {
     title: "Françoise et Michel Rieul",
     content: `Adresse : 22 rue Gallier\n
               Tel : 01.72.84.75.46\n

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { accomodation } from "../../data/accomodation";
-import { environment } from 'environments/environment.development';
+import { environment } from '../environments/environment';
 import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
