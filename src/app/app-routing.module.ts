@@ -5,6 +5,7 @@ import { ContactComponent } from './contact/contact.component';
 import { HebergementComponent } from './hebergement/hebergement.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { AccesDomaine } from './accesDomaine/accesDomaine.component';
+import { accesEglise } from './accessEglise/accesEglise.component';
 
 const routes: Routes = [
   { path: '',
@@ -30,6 +31,10 @@ const routes: Routes = [
   {
     path: 'access',
     component: AccesDomaine,
+  },
+  {
+    path: 'ceremony',
+    component: accesEglise,
   },
   {
     path: 'rsvp',
