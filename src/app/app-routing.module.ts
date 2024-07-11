@@ -6,6 +6,7 @@ import { HebergementComponent } from './hebergement/hebergement.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { AccesDomaine } from './accesDomaine/accesDomaine.component';
 import { accesEglise } from './accessEglise/accesEglise.component';
+import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
 
 const routes: Routes = [
   { path: '',
@@ -39,6 +40,10 @@ const routes: Routes = [
   {
     path: 'rsvp',
     component: RsvpComponent,
+  },
+  {
+    path: 'civil',
+    component: PhotoDisplayerComponent,
   }
 ];
 

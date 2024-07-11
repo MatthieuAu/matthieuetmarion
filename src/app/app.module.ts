@@ -11,6 +11,8 @@ import { CollapsibleComponent } from './collapsible/collapsible.component';
 import { HebergementComponent } from './hebergement/hebergement.component';
 import { ParagraphotoComponent } from './shared/paragraphoto/paragraphoto.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
+import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,10 +25,12 @@ import { RsvpComponent } from './rsvp/rsvp.component';
     HebergementComponent,
     ParagraphotoComponent,
     RsvpComponent,
+    PhotoDisplayerComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

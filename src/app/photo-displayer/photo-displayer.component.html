@@ -1,0 +1,11 @@
+
+<section>
+    <!-- Modal -->
+    <dialog #ZoomDialog class="bg-gray-800 bg-opacity-75 py-[2rem] w-full h-[90%] cursor-pointer outline-white" role="dialog" (click)="ZoomDialog.close()">
+        <img class="h-[80vh] mx-auto w-auto" [src]="modalImage">
+    </dialog>
+    <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] py-[2%]" >
+        <img class="photo-displayer--img block mb-[1rem] " *ngFor="let photo of photosName" [src]="photo" (load)="imageDidLoad($event)" (click)="ZoomDialog.show();onClickImage($event)">
+    </div>
+</section>
+

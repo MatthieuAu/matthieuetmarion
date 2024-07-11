@@ -16,6 +16,8 @@ export class NavbarComponent implements OnInit {
     { label: 'Hébergement', path: '/accomodation' },
     // { label: 'Contact', path: '/contact' },
     { label: 'RSVP', path: '/rsvp' },
+    // { label: 'Photos Civil', path: '/civil' },
+
   ]
 
   constructor(private _eref: ElementRef) { }
