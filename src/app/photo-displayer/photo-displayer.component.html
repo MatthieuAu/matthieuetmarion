@@ -1,11 +1,21 @@
-
-<section>
-    <!-- Modal -->
-    <dialog #ZoomDialog class="bg-gray-800 bg-opacity-75 py-[2rem] w-full h-[90%] cursor-pointer outline-white" role="dialog" (click)="ZoomDialog.close()">
-        <img class="h-[80vh] mx-auto w-auto" [src]="modalImage">
-    </dialog>
-    <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] py-[2%]" >
-        <img class="photo-displayer--img block mb-[1rem] " *ngFor="let photo of photosName" [src]="photo" (load)="imageDidLoad($event)" (click)="ZoomDialog.show();onClickImage($event)">
+<section >
+    <div *ngIf="!showPhotos; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]">
+        <img class="h-[40vh] rounded-sm" src="assets/photo-civil.jpg" >
+        <p class="text-center">Pour accéder aux photos, veuillez renseigner ci-dessous le mot de passe que les mariés vous ont communiqué.</p>
+        <form (ngSubmit)="onSubmit()" class="flex justify-center gap-[1rem]">
+            <input id="input" class="px-[2px] border-2 rounded-md" [(ngModel)]="mdpSubmission" name="mdpSubmission"/>
+            <button class="px-[3px] flex">
+                <i class="material-icons -rotate-[30deg] -translate-y-1" style="color:grey;">send</i>
+            </button>
+        </form>
     </div>
+    <ng-template #photoDisplayer>
+        <!-- Modal -->
+        <dialog #ZoomDialog class="cursor-pointer outline-none" role="dialog"  (click)="ZoomDialog.close()">
+            <img class="photo-displayer--zoom" [src]="modalImage" (load)="imageDidLoad($event)">
+        </dialog>
+        <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] py-[2%]" >
+            <img class="photo-displayer--img block mb-[1rem] " *ngFor="let photo of photosName" [src]="photo" loading="lazy" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage($event)">
+        </div>
+    </ng-template>
 </section>
-

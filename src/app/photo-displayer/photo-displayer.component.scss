@@ -1,3 +1,7 @@
+#scrolling-view {
+    justify-content: start;
+}
+
 .photo-displayer--img {
     width: 15%;
     
@@ -12,15 +16,88 @@
     }
 }
 
+.photo-displayer--zoom {
+    max-height: 90vh;
+}
 
-@media only screen and (max-width: 400px) {
+@keyframes shake {
+    0% {
+      margin-left: 0rem;
+    }
+    25% {
+      margin-left: 0.5rem;
+    }
+    75% {
+      margin-left: -0.5rem;
+    }
+    100% {
+      margin-left: 0rem;
+    }
+  }
+  
+  .can-invalid {
+    animation: shake 0.1s ease-in-out 0s 2;
+    box-shadow: 0 0 0.6rem #ff0000;
+  }
+
+
+::backdrop {
+    background-color: rgb(31 41 55);
+    opacity: 0.75;
+ }
+
+
+  @media only screen and (max-width: 600px) {
+    #scrolling-view {
+        justify-content: start;
+    }
+    
+    .photo-displayer--img {
+      width: 24%;
+
+      &.landscape {
+        width: 49%;
+        }
+    }
+    dialog {
+        max-width: 85vw;
+        max-height: 90vh;
+    }
+    
+
+    dialog:has(.photo-displayer--zoom.landscape) {  
+        overflow: visible;
+        background-color: transparent;
+
+        .photo-displayer--zoom {
+            transform: rotate(-90deg) scale(1.6);
+        }
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+    #scrolling-view {
+        justify-content: center;
+    }
+
     .photo-displayer--img {
       width: 48%;
 
       &.landscape {
         width: 100%;
+        }
     }
+    dialog {
+        max-width: 98vw;
     }
+    
 
-   
+    dialog:has(.photo-displayer--zoom.landscape) {  
+        overflow: visible;
+        max-width: 90vw;
+
+        .photo-displayer--zoom {
+            transform: rotate(-90deg) scale(2);
+        }
+    }
   }

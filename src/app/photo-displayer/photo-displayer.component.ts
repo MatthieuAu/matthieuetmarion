@@ -13,6 +13,8 @@ export class PhotoDisplayerComponent implements OnInit{
   needToFetchNextPhotos = true;
   maxPhotosPerFetch = 30;
   modalImage="";
+  showPhotos = false;
+  mdpSubmission = "";
 
   constructor(private http: HttpClient) {
   }
@@ -60,9 +62,24 @@ export class PhotoDisplayerComponent implements OnInit{
       const width = evt.target.naturalWidth;
       const height = evt.target.naturalHeight;
       if (height < width) {
-        evt.target.classList += [' landscape']
+        evt.target.classList.add('landscape');
+      } else {
+        evt.target.classList.remove('landscape');
       }
     }
+  
+  }
+
+  onSubmit() {
+    const input = document.getElementById("input");
+    input?.classList.remove("can-invalid");
+    this.http.post("https://ewrz3dlbfdcdhai54eshvftjwa0xpxgu.lambda-url.us-east-1.on.aws/", {'mdp_submission': this.mdpSubmission},)
+     .subscribe((value) => {
+      this.showPhotos = value as boolean;
+      if (!this.showPhotos) {
+        input?.classList.add("can-invalid");
+      }
+     })
   
   }
 }
