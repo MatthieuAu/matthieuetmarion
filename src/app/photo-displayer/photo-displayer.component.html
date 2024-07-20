@@ -15,7 +15,7 @@
             <img class="photo-displayer--zoom" [src]="modalImage" (load)="imageDidLoad($event)">
         </dialog>
         <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%]" >
-            <img class="photo-displayer--img block " *ngFor="let photo of photosName" [src]="photo" loading="lazy" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage($event)">
+            <img class="photo-displayer--img block " *ngFor="let photo of photosName" [src]="photo" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage($event)">
         </div>
     </ng-template>
 </section>
