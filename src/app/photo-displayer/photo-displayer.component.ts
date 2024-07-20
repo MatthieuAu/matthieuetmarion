@@ -73,7 +73,7 @@ export class PhotoDisplayerComponent implements OnInit{
   onSubmit() {
     const input = document.getElementById("input");
     input?.classList.remove("can-invalid");
-    this.http.post("https://ewrz3dlbfdcdhai54eshvftjwa0xpxgu.lambda-url.us-east-1.on.aws/", {'mdp_submission': this.mdpSubmission},)
+    this.http.post("https://xxtmtkhlj2cmrdcmi2o4tss5ha0bzffc.lambda-url.eu-west-3.on.aws/", {'mdp_submission': this.mdpSubmission},)
      .subscribe((value) => {
       this.showPhotos = value as boolean;
       if (!this.showPhotos) {
