@@ -1,6 +1,5 @@
 <section >
-    <!-- <div *ngIf="!showPhotos; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]"> -->
-    <div *ngIf="false; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]">
+    <div *ngIf="!showPhotos; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]">
         <img class="h-[40vh] rounded-sm" src="assets/photo-civil.jpg" >
         <p class="text-center">Pour accéder aux photos, veuillez renseigner ci-dessous le mot de passe que les mariés vous ont communiqué.</p>
         <form (ngSubmit)="onSubmit()" class="flex justify-center gap-[1rem]">
