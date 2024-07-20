@@ -1,5 +1,6 @@
 <section >
-    <div *ngIf="!showPhotos; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]">
+    <!-- <div *ngIf="!showPhotos; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]"> -->
+    <div *ngIf="false; else photoDisplayer" class="pt-[6rem] flex flex-col items-center justify-center gap-[2rem]">
         <img class="h-[40vh] rounded-sm" src="assets/photo-civil.jpg" >
         <p class="text-center">Pour accéder aux photos, veuillez renseigner ci-dessous le mot de passe que les mariés vous ont communiqué.</p>
         <form (ngSubmit)="onSubmit()" class="flex justify-center gap-[1rem]">
@@ -14,8 +15,8 @@
         <dialog #ZoomDialog class="cursor-pointer outline-none" role="dialog"  (click)="ZoomDialog.close()">
             <img class="photo-displayer--zoom" [src]="modalImage" (load)="imageDidLoad($event)">
         </dialog>
-        <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] py-[2%]" >
-            <img class="photo-displayer--img block mb-[1rem] " *ngFor="let photo of photosName" [src]="photo" loading="lazy" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage($event)">
+        <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%]" >
+            <img class="photo-displayer--img block " *ngFor="let photo of photosName" [src]="photo" loading="lazy" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage($event)">
         </div>
     </ng-template>
 </section>
