@@ -7,6 +7,7 @@ import { RsvpComponent } from './rsvp/rsvp.component';
 import { AccesDomaine } from './accesDomaine/accesDomaine.component';
 import { accesEglise } from './accessEglise/accesEglise.component';
 import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
+import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
 
 const routes: Routes = [
   { path: '',
@@ -44,6 +45,10 @@ const routes: Routes = [
   {
     path: 'civil',
     component: PhotoDisplayerComponent,
+  },
+  {
+    path: 'partage',
+    component: PartagePhotoComponent,
   }
 ];
 

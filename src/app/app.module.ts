@@ -14,6 +14,8 @@ import { RsvpComponent } from './rsvp/rsvp.component';
 import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
+import { GalleryModule } from 'ng-gallery';
 
 @NgModule({
   declarations: [
@@ -27,12 +29,14 @@ import { FormsModule } from '@angular/forms';
     ParagraphotoComponent,
     RsvpComponent,
     PhotoDisplayerComponent,
+    PartagePhotoComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

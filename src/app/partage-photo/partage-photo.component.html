@@ -1,0 +1,40 @@
+<section class="pt-[1rem] flex flex-col gap-[2rem]">
+    <div>
+        <button class="flex items-center" (click)="AddImagesDialog.showModal()" style="color:grey;">
+            Ajouter
+            <i class="material-icons" style="color:grey;">
+                    add_photo_alternate
+            </i>
+        </button>
+    </div>
+    <div class="container" gallerize>
+        <img *ngFor="let item of items"
+             [src]="item.thumb"
+             [attr.imageSrc]="item.src"
+             [attr.thumbSrc]="item.thumb"/>
+      </div>
+    
+</section>
+<dialog #AddImagesDialog class="cursor-pointer outline-none p-[1rem] rounded-md" role="dialog">
+    <div class="flex flex-col gap-[2rem] items-center">
+        <p class="self-start">
+            Ajoutez vos photos !
+        </p> 
+        <input 
+            type="file"
+            accept="image/*,video/*"
+            multiple
+            (change)="onFileSelected($event)"
+        />
+        <div class="flex gap-[1rem]">
+            <button class="px-[3px] flex gap-[0.5rem] items-center" (click)="AddImagesDialog.close()">
+                <p>Annuler</p> 
+                <i class="material-icons" style="color:red;">close</i>
+            </button>
+            <button class="px-[3px] flex gap-[0.5rem] items-center" (click)="uploadFiles();AddImagesDialog.close();">
+                <p>Envoyer</p> 
+                <i class="material-icons -rotate-[30deg] -translate-y-1" style="color:green;">send</i>
+            </button>
+        </div>
+    </div>
+</dialog>
