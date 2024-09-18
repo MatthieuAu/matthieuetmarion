@@ -15,7 +15,6 @@ import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.compo
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
-import { GalleryModule } from 'ng-gallery';
 
 @NgModule({
   declarations: [
@@ -36,7 +35,6 @@ import { GalleryModule } from 'ng-gallery';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    GalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]
