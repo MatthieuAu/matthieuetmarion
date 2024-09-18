@@ -1,10 +1,11 @@
-import { Component, ComponentRef, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
   @ViewChild(PhotoDisplayerComponent) displayer!: PhotoDisplayerComponent

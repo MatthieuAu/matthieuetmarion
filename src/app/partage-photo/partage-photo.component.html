@@ -7,12 +7,19 @@
             </i>
         </button>
     </div>
-    <div class="container" gallerize>
-        <img *ngFor="let item of items"
-             [src]="item.thumb"
-             [attr.imageSrc]="item.src"
-             [attr.thumbSrc]="item.thumb"/>
-      </div>
+    <dialog #ZoomDialog class="cursor-pointer outline-none" role="dialog"  (click)="ZoomDialog.close()">
+        <img *ngIf="modalSrc.type == 'image'" class="photo-displayer--zoom" [src]="modalSrc.src" (load)="imageDidLoad($event)">
+        <video *ngIf="modalSrc.type == 'video'" controls class="photo-displayer--zoom"  (load)="imageDidLoad($event)">
+            <source [src]="modalSrc.src" type="video/mp4"/>
+            <source [src]="modalSrc.src" type="video/mov"/>
+            <source [src]="modalSrc.src" type="video/avi"/>
+            <source [src]="modalSrc.src" type="video/webm"/>
+            <source [src]="modalSrc.src" type="video/wmv"/>
+        </video>
+    </dialog>
+    <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%] items-center" >
+        <img class="photo-displayer--img block " *ngFor="let photo of items" [src]="photo.thumb" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage(photo)">
+    </div>
     
 </section>
 <dialog #AddImagesDialog class="cursor-pointer outline-none p-[1rem] rounded-md" role="dialog">
