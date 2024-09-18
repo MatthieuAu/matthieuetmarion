@@ -12,31 +12,24 @@ import { HebergementComponent } from './hebergement/hebergement.component';
 import { ParagraphotoComponent } from './shared/paragraphoto/paragraphoto.component';
 import { RsvpComponent } from './rsvp/rsvp.component';
 import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    HomepageComponent,
-    NavbarComponent,
-    ContactComponent,
-    FooterComponent,
-    CollapsibleComponent,
-    HebergementComponent,
-    ParagraphotoComponent,
-    RsvpComponent,
-    PhotoDisplayerComponent,
-    PartagePhotoComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        HomepageComponent,
+        NavbarComponent,
+        ContactComponent,
+        FooterComponent,
+        CollapsibleComponent,
+        HebergementComponent,
+        ParagraphotoComponent,
+        RsvpComponent,
+        PhotoDisplayerComponent,
+        PartagePhotoComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
