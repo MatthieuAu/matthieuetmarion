@@ -17,8 +17,8 @@
             <source [src]="modalSrc.src" type="video/wmv"/>
         </video>
     </dialog>
-    <div id="scrolling-view" class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%] items-center" >
-        <img class="photo-displayer--img block " *ngFor="let photo of items" [src]="photo.thumb" (load)="imageDidLoad($event)" (click)="ZoomDialog.showModal();onClickImage(photo)">
+    <div class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%] items-center" >
+        <img class="photo-displayer--img block " *ngFor="let photo of items" [src]="photo.thumb" (load)="imageDidLoad($event)" (click)="onClickImage(photo);ZoomDialog.showModal()">
     </div>
     
 </section>

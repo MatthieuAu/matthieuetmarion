@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { v4 as uuid } from 'uuid';
 
 @Component({
   selector: 'app-partage-photo',
@@ -61,7 +62,7 @@ export class PartagePhotoComponent implements OnInit {
       let formData = new FormData();
       formData.append('file', element);
       console.log(formData);
-        this.http.put(`https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/${element.name}`, element).subscribe({
+        this.http.put(`https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/${uuid()}-${element.name}`, element).subscribe({
           error: error => console.log(error)
         });
     };
@@ -92,6 +93,7 @@ export class PartagePhotoComponent implements OnInit {
     if (evt && evt.target) {
       const width = evt.target.naturalWidth;
       const height = evt.target.naturalHeight;
+      console.log(width, height);
       if (height < width) {
         evt.target.classList.add('landscape');
       } else {
