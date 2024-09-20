@@ -20,11 +20,12 @@ export class PartagePhotoComponent implements OnInit {
   }
 
   filesToUpload: Array<File> = [];
-  items: {thumb: string, src: string, type: string}[] = [];
-  modalSrc = {thumb: "", src: "", type: ""};
+  items: {thumb: string, src: string, type: string, position: number}[] = [];
+  modalSrc = {thumb: "", src: "", type: "", position: 0};
 
 
   private buildDataStructure(itemList: string[]) {
+    let iterator = 0;
     itemList.forEach((value) => {
       if (
         value.toLowerCase().endsWith(".mp4") || 
@@ -36,16 +37,19 @@ export class PartagePhotoComponent implements OnInit {
             {
               src: "https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/" + value,
               thumb: "https://beanscafe.org/wp-content/uploads/2021/04/Video-Placeholder.jpg",
-              type: "video"
+              type: "video",
+              position: iterator
             })
         } else {
           this.items.push(
             {
               src: "https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/" + value,
               thumb: "https://upload-religieu-compressed.s3.eu-west-3.amazonaws.com/" + value,
-              type: "image"
+              type: "image",
+              position: iterator 
             })
         }
+        iterator += 1;
     });
   }
 
@@ -84,7 +88,7 @@ export class PartagePhotoComponent implements OnInit {
   }
 
   resetModal() {
-    this.modalSrc = {thumb: "", src: "", type: ""};
+    this.modalSrc = {thumb: "", src: "", type: "", position: 0};
   }
 
   onClickImage(photo: any){
@@ -102,5 +106,25 @@ export class PartagePhotoComponent implements OnInit {
       }
     }
   
+  }
+
+  previousImage(event: Event) {
+    event.stopPropagation();
+    if (this.modalSrc.position != 0) {
+      this.modalSrc = this.items[this.modalSrc.position - 1];
+    }
+    
+  }
+
+  nextImage(event: Event) {
+    event.stopPropagation();
+    if (this.modalSrc.position < this.items.length) {
+      this.modalSrc = this.items[this.modalSrc.position + 1];
+    }
+  }
+
+  scrollToImage() {
+    const imageToScroll = document.getElementById("item"+this.modalSrc.position);
+    imageToScroll?.scrollIntoView({ behavior: "smooth", inline: "nearest" });
   }
 }
