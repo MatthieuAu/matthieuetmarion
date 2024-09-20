@@ -27,12 +27,11 @@ export class PartagePhotoComponent implements OnInit {
   private buildDataStructure(itemList: string[]) {
     itemList.forEach((value) => {
       if (
-        value.endsWith(".mp4") || 
-        value.endsWith(".mov") ||
-        value.endsWith(".avi") ||
-        value.endsWith(".wmv") ||
-        value.endsWith(".webm")) {
-          console.log(value);
+        value.toLowerCase().endsWith(".mp4") || 
+        value.toLowerCase().endsWith(".mov") ||
+        value.toLowerCase().endsWith(".avi") ||
+        value.toLowerCase().endsWith(".wmv") ||
+        value.toLowerCase().endsWith(".webm")) {
           this.items.push(
             {
               src: "https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/" + value,
@@ -61,7 +60,6 @@ export class PartagePhotoComponent implements OnInit {
     for (const element of this.filesToUpload) {
       let formData = new FormData();
       formData.append('file', element);
-      console.log(formData);
         this.http.put(`https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/${uuid()}-${element.name}`, element).subscribe({
           error: error => console.log(error)
         });
@@ -85,6 +83,10 @@ export class PartagePhotoComponent implements OnInit {
     )
   }
 
+  resetModal() {
+    this.modalSrc = {thumb: "", src: "", type: ""};
+  }
+
   onClickImage(photo: any){
     this.modalSrc = photo
   }
@@ -93,7 +95,6 @@ export class PartagePhotoComponent implements OnInit {
     if (evt && evt.target) {
       const width = evt.target.naturalWidth;
       const height = evt.target.naturalHeight;
-      console.log(width, height);
       if (height < width) {
         evt.target.classList.add('landscape');
       } else {

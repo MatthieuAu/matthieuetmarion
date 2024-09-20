@@ -7,7 +7,7 @@
             </i>
         </button>
     </div>
-    <dialog #ZoomDialog class="cursor-pointer outline-none" role="dialog"  (click)="ZoomDialog.close()">
+    <dialog #ZoomDialog class="cursor-pointer outline-none" role="dialog"  (click)="ZoomDialog.close();resetModal()">
         <img *ngIf="modalSrc.type == 'image'" class="photo-displayer--zoom" [src]="modalSrc.src" (load)="imageDidLoad($event)">
         <video *ngIf="modalSrc.type == 'video'" controls class="photo-displayer--zoom"  (load)="imageDidLoad($event)">
             <source [src]="modalSrc.src" type="video/mp4"/>
