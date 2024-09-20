@@ -16,14 +16,16 @@
         <i class="material-icons absolute top-[50%] right-[2%] p-[0.75rem] z-50 bg-opacity-30 bg-white hover:bg-opacity-50 rounded-full" (click)="nextImage($event)">
             arrow_forward_ios
         </i>
-        <img *ngIf="modalSrc.type == 'image'" class="photo-displayer--zoom" [src]="modalSrc.src" (load)="imageDidLoad($event)">
-        <video *ngIf="modalSrc.type == 'video'" controls class="photo-displayer--zoom"  (load)="imageDidLoad($event)">
-            <source [src]="modalSrc.src" type="video/mp4"/>
-            <source [src]="modalSrc.src" type="video/mov"/>
-            <source [src]="modalSrc.src" type="video/avi"/>
-            <source [src]="modalSrc.src" type="video/webm"/>
-            <source [src]="modalSrc.src" type="video/wmv"/>
-        </video>
+        <div (click)="$event.stopPropagation()">
+            <img *ngIf="modalSrc.type == 'image'" class="photo-displayer--zoom" [src]="modalSrc.src" (load)="imageDidLoad($event)">
+            <video *ngIf="modalSrc.type == 'video'" controls class="photo-displayer--zoom"  (load)="imageDidLoad($event)">
+                <source [src]="modalSrc.src" type="video/mp4"/>
+                <source [src]="modalSrc.src" type="video/mov"/>
+                <source [src]="modalSrc.src" type="video/avi"/>
+                <source [src]="modalSrc.src" type="video/webm"/>
+                <source [src]="modalSrc.src" type="video/wmv"/>
+            </video>
+        </div>
     </dialog>
     <div class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%] items-center" >
         <img *ngFor="let photo of items" [id]="'item'+photo.position" class="photo-displayer--img block " [src]="photo.thumb" (load)="imageDidLoad($event)" (click)="onClickImage(photo);ZoomDialog.showModal()">
