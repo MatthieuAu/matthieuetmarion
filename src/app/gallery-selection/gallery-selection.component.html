@@ -1,0 +1,10 @@
+<div class="flex flex-row gap-2 p-3 items-center justify-center w-full">
+    <button
+        *ngFor="let child of children"
+        routerLink="{{ child.path }}"
+        class="rounded-full border py-1 px-4 bg-slate-100 text-slate-600 border-slate-600">
+        {{ child.label }}
+    </button>
+</div>
+
+<router-outlet />

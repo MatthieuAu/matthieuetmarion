@@ -70,13 +70,6 @@ export class PartagePhotoComponent implements OnInit {
     };
   }
 
-  // ,
-	// 		"Condition": {
-	// 			"StringLike": {
-	// 				"aws:Referer": "https://matthieuetmarion.fr/*"
-	// 			}
-	// 		}
-
   getAllItemsFromBucket() {
     this.http.get(`https://testforuploadreligieu.s3.eu-west-3.amazonaws.com/?list-type=2`, { responseType: 'text' }).subscribe(
       data => {

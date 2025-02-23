@@ -11,9 +11,9 @@ import { Component, ElementRef, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   links = [
     { label: 'Home', path: '/home' },
-    // { label: 'Contact', path: '/contact' },
     { label: 'Photos Civil', path: '/civil' },
     { label: 'Partage des photos', path: '/partage' },
+    { label: 'Photos mariage religieux', path: '/religieux' },
   ]
 
   constructor(private _eref: ElementRef) { }

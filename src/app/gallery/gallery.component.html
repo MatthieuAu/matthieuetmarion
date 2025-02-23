@@ -1,0 +1,14 @@
+  <div class="grid-container">
+      <img 
+      *ngFor="let item of items; let i = index"
+         appImageSizing
+         [lightbox]="i"
+         [gallery]="galleryId"
+      class="object-fill w-full" 
+      [src]="item.data?.thumb"
+      />
+  </div>
+
+  
+
+

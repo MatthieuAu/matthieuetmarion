@@ -8,6 +8,8 @@ import { AccesDomaine } from './accesDomaine/accesDomaine.component';
 import { accesEglise } from './accessEglise/accesEglise.component';
 import { PhotoDisplayerComponent } from './photo-displayer/photo-displayer.component';
 import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { GallerySelectionComponent } from './gallery-selection/gallery-selection.component';
 
 const routes: Routes = [
   { path: '',
@@ -49,6 +51,41 @@ const routes: Routes = [
   {
     path: 'partage',
     component: PartagePhotoComponent,
+  },
+  {
+    path: 'religieux',
+    component: GallerySelectionComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'matin',
+        pathMatch: 'full'
+      },
+      {
+        path: 'matin',
+        component: GalleryComponent, 
+      },
+      {
+        path: 'ceremonie-religieuse', 
+        component: GalleryComponent, 
+      },
+      {
+        path: 'a-deux', 
+        component: GalleryComponent, 
+      },
+      {
+        path: 'vin-d-honneur', 
+        component: GalleryComponent, 
+      },
+      {
+        path: 'diner', 
+        component: GalleryComponent, 
+      },
+      {
+        path: 'soiree', 
+        component: GalleryComponent, 
+      },
+    ]
   }
 ];
 

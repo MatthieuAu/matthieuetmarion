@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { importProvidersFrom, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,13 @@ import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http'
 import { FormsModule } from '@angular/forms';
 import { PartagePhotoComponent } from './partage-photo/partage-photo.component';
 import { CommonModule } from '@angular/common';
+import { GalleryModule } from 'ng-gallery';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LightboxModule } from 'ng-gallery/lightbox';
+import { ImageSizingDirective } from './directives/image-sizing.directive';
+import { GallerySelectionComponent } from './gallery-selection/gallery-selection.component';
+
 
 @NgModule({ 
   declarations: [
@@ -30,15 +37,22 @@ import { CommonModule } from '@angular/common';
     RsvpComponent,
     PhotoDisplayerComponent,
     PartagePhotoComponent,
+    GalleryComponent,
+    ImageSizingDirective,
+    GallerySelectionComponent
   ],
   bootstrap: [AppComponent],
   imports: 
     [BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    GalleryModule,
+    LightboxModule
     ],
   providers: 
-  [provideHttpClient(withInterceptorsFromDi())]
+  [provideHttpClient(withInterceptorsFromDi()),
+    provideAnimations(),
+    importProvidersFrom(GalleryModule)]
 })
 export class AppModule { }
