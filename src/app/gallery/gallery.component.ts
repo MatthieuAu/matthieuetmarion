@@ -47,18 +47,4 @@ export class GalleryComponent {
       }
     )
   }
-
-  // openGallery(index: number = 0) {
-  //   this.lightbox.open(index, this.galleryId, {
-  //     panelClass: 'fullscreen'
-  //   });
-  // }
-
-  // ,
-  // "Condition": {
-  //     "StringLike": {
-  //         "aws:Referer": "https://matthieuetmarion.fr/*"
-  //     }
-  // }
-
 }
