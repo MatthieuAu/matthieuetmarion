@@ -1,10 +1,10 @@
   <div class="flex flex-cols flex-wrap gap-[1%] gap-y-4 py-[2%] items-center">
       <img 
       *ngFor="let item of items; let i = index"
-         appImageSizing
          [lightbox]="i"
          [gallery]="galleryId"
       class="object-fill rounded w-[15%]" 
       [src]="item.data?.thumb"
+      (load)="imageDidLoad($event)"
       />
   </div>

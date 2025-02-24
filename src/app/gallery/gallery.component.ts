@@ -47,4 +47,16 @@ export class GalleryComponent {
       }
     )
   }
+
+  imageDidLoad(evt: any) {
+    if (evt && evt.target) {
+      const width = evt.target.naturalWidth;
+      const height = evt.target.naturalHeight;
+      if (height < width) {
+        evt.target.classList.add('landscape');
+      } else {
+        evt.target.classList.remove('landscape');
+      }
+    }
+  }
 }
