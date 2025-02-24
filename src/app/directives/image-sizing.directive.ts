@@ -1,11 +1,11 @@
-import { Directive, ElementRef, HostBinding } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, HostBinding } from '@angular/core';
 
 @Directive({
   selector: '[appImageSizing]',
 })
 export class ImageSizingDirective {
 
-  ngAfterViewInit() {
+  ngAfterViewChecked() {
     const element = (this as any).elementRef.nativeElement;
     const width = element.offsetWidth;
     const height = element.offsetHeight;
